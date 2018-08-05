@@ -1,0 +1,102 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "afab27801764be1c00e214f2d66834899de980e7"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "myShorLib/1.0.0": {
+        "dependencies": {
+          "Microsoft.Quantum.Canon": "0.2.1806.3001-preview",
+          "Microsoft.Quantum.Development.Kit": "0.2.1806.3001-preview",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "myShorLib.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.Quantum.Canon/0.2.1806.3001-preview": {
+        "dependencies": {
+          "Microsoft.Quantum.Development.Kit": "0.2.1806.3001-preview"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Quantum.Canon.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Quantum.Development.Kit/0.2.1806.3001-preview": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Quantum.MetaData.dll": {
+            "assemblyVersion": "0.2.1806.3001",
+            "fileVersion": "0.2.1806.3001"
+          },
+          "lib/netstandard2.0/Microsoft.Quantum.Primitives.dll": {
+            "assemblyVersion": "0.2.1806.3001",
+            "fileVersion": "0.2.1806.3001"
+          },
+          "lib/netstandard2.0/Microsoft.Quantum.Simulation.Common.dll": {
+            "assemblyVersion": "0.2.1806.3001",
+            "fileVersion": "0.2.1806.3001"
+          },
+          "lib/netstandard2.0/Microsoft.Quantum.Simulation.Core.dll": {
+            "assemblyVersion": "0.2.1806.3001",
+            "fileVersion": "0.2.1806.3001"
+          },
+          "lib/netstandard2.0/Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.dll": {
+            "assemblyVersion": "0.2.1806.3001",
+            "fileVersion": "0.2.1806.3001"
+          },
+          "lib/netstandard2.0/Microsoft.Quantum.Simulation.Simulators.dll": {
+            "assemblyVersion": "0.2.1806.3001",
+            "fileVersion": "0.2.1806.3001"
+          }
+        }
+      },
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "myShorLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.Quantum.Canon/0.2.1806.3001-preview": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wdMNTTN+k5a1BlrQUInzoUwmnKiWBESbXImKhmQEYXizd0FGadJlz/OZV+hAJu1V6jMgzrq9WfobX3c7w9NN0g==",
+      "path": "microsoft.quantum.canon/0.2.1806.3001-preview",
+      "hashPath": "microsoft.quantum.canon.0.2.1806.3001-preview.nupkg.sha512"
+    },
+    "Microsoft.Quantum.Development.Kit/0.2.1806.3001-preview": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UJUR5Ji3QBUZRNLKLDWihKrM1vG4R5IWN85+pZec1rQhf/F9ZnfPO+q65VLjfHA6/FIucmCBFPOMwVwscfamtQ==",
+      "path": "microsoft.quantum.development.kit/0.2.1806.3001-preview",
+      "hashPath": "microsoft.quantum.development.kit.0.2.1806.3001-preview.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    }
+  }
+}

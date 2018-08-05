@@ -1,0 +1,14 @@
+name: qsharp-shor
+channels:
+    - conda-forge
+    - pythonnet
+    - https://solidrepo.blob.core.windows.net/release/1806.3001/src/python/bin/package
+dependencies:
+    - numpy
+    - pythonnet
+    - qutip
+    - matplotlib
+    - ipyparallel
+    - qsharp=0.2.1806.3001
+    - pip:
+        - qinfer

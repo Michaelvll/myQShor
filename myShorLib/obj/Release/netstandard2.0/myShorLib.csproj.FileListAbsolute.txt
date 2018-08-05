@@ -1,0 +1,9 @@
+C:\AResource\QuantumComputing\myShor\myShorLib\bin\Release\netstandard2.0\myShorLib.deps.json
+C:\AResource\QuantumComputing\myShor\myShorLib\bin\Release\netstandard2.0\myShorLib.dll
+C:\AResource\QuantumComputing\myShor\myShorLib\bin\Release\netstandard2.0\myShorLib.pdb
+C:\AResource\QuantumComputing\myShor\myShorLib\obj\Release\netstandard2.0\myShorLib.csprojAssemblyReference.cache
+C:\AResource\QuantumComputing\myShor\myShorLib\obj\Release\netstandard2.0\myShorLib.csproj.CoreCompileInputs.cache
+C:\AResource\QuantumComputing\myShor\myShorLib\obj\Release\netstandard2.0\myShorLib.AssemblyInfoInputs.cache
+C:\AResource\QuantumComputing\myShor\myShorLib\obj\Release\netstandard2.0\myShorLib.AssemblyInfo.cs
+C:\AResource\QuantumComputing\myShor\myShorLib\obj\Release\netstandard2.0\myShorLib.dll
+C:\AResource\QuantumComputing\myShor\myShorLib\obj\Release\netstandard2.0\myShorLib.pdb
