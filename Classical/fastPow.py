@@ -1,4 +1,4 @@
-def ksm(a, b, N):
+def fastPow(a, b, N):
     ans = 1
     while (b > 0):
         if b % 2:
@@ -8,7 +8,7 @@ def ksm(a, b, N):
     return ans
 
 
-def ksmBool(a, b, N):
+def fastPowBool(a, b, N):
     ans = 1
     while (b > 0):
         if b % 2:

@@ -1,8 +1,7 @@
-def gcd(a,b):
-	if (a < b):
-		return gcd(b,a)
-	else:
-		if (a % b == 0):
-			return b
-		else:
-			return gcd(b, a % b)
+def gcd(a, b):
+    if b > a:
+        a, b = b, a
+    while b > 0:
+        a = a % b
+        a, b = b, a
+    return a

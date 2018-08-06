@@ -4,12 +4,12 @@ using Microsoft.Quantum.Primitive;
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.MetaData.Attributes;
 
-[assembly: OperationDeclaration("myShorLib", "PhaseEstimation (x : Int, N : Int, precision : Int) : Int", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 267L, 9L, 5L)]
-[assembly: OperationDeclaration("myShorLib", "PhaseEstimationImpl (x : Int, N : Int, target : Qubit[], eigenvector : Qubit[]) : ()", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 868L, 42L, 2L)]
-[assembly: OperationDeclaration("myShorLib", "ConstructU (x : Int, modulus : Int, power : Int, target : Qubit[]) : ()", new string[] { "Controlled", "Adjoint" }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 1344L, 62L, 2L)]
-[assembly: OperationDeclaration("myShorLib", "InverseFT (qs : Qubit[]) : ()", new string[] { "Controlled", "Adjoint" }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 1623L, 78L, 2L)]
-[assembly: OperationDeclaration("myShorLib", "MyTest () : Int", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 2560L, 117L, 2L)]
-[assembly: FunctionDeclaration("myShorLib", "PowerMod (x : Int, power : Int, modulus : Int) : Int", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 2027L, 98L, 14L)]
+[assembly: OperationDeclaration("myShorLib", "PhaseEstimation (x : Int, N : Int, precision : Int) : Int", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 294L, 12L, 5L)]
+[assembly: OperationDeclaration("myShorLib", "PhaseEstimationImpl (x : Int, N : Int, target : Qubit[], eigenvector : Qubit[]) : ()", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 1198L, 45L, 5L)]
+[assembly: OperationDeclaration("myShorLib", "ConstructU (x : Int, modulus : Int, power : Int, target : Qubit[]) : ()", new string[] { "Controlled", "Adjoint" }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 1832L, 69L, 5L)]
+[assembly: OperationDeclaration("myShorLib", "InverseFT (qs : Qubit[]) : ()", new string[] { "Controlled", "Adjoint" }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 2159L, 85L, 5L)]
+[assembly: OperationDeclaration("myShorLib", "MyTest () : Int", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 3207L, 127L, 5L)]
+[assembly: FunctionDeclaration("myShorLib", "PowerMod (x : Int, power : Int, modulus : Int) : Int", new string[] { }, "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs", 2641L, 105L, 14L)]
 #line hidden
 namespace myShorLib
 {
@@ -75,40 +75,40 @@ namespace myShorLib
         public override Func<(Int64,Int64,Int64), Int64> Body => (__in) =>
         {
             var (x,N,precision) = __in;
-#line 12 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
-            var eigenLength = MicrosoftQuantumCanonBitSize.Apply(N);
-#line 13 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
-            var res = 0L;
 #line 15 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
-            var eigenvector = Allocate.Apply(eigenLength);
+            var eigenLength = MicrosoftQuantumCanonBitSize.Apply(N);
 #line 16 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
-            MicrosoftQuantumPrimitiveX.Apply(eigenvector[0L]);
+            var res = 0L;
 #line 18 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+            var eigenvector = Allocate.Apply(eigenLength);
+#line 19 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+            MicrosoftQuantumPrimitiveX.Apply(eigenvector[0L]);
+#line 21 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var target = Allocate.Apply(precision);
-#line 20 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 23 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             PhaseEstimationImpl.Apply((x, N, target, eigenvector));
-#line 22 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 25 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             foreach (var i in new Range(0L, (precision - 1L)))
             {
-#line 23 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 26 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 res = (res * 2L);
-#line 24 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 27 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 if ((M.Apply(target[i]) == Result.One))
                 {
-#line 25 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 28 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                     res = (res + 1L);
                 }
             }
 
-#line 28 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 31 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             ResetAll.Apply(target);
-#line 29 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 32 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             ResetAll.Apply(eigenvector);
 #line hidden
             Release.Apply(target);
 #line hidden
             Release.Apply(eigenvector);
-#line 33 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 36 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             return res;
         }
 
@@ -170,28 +170,28 @@ namespace myShorLib
         public override Func<(Int64,Int64,QArray<Qubit>,QArray<Qubit>), QVoid> Body => (__in) =>
         {
             var (x,N,target,eigenvector) = __in;
-#line 44 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 47 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var targetLength = target.Count;
-#line 46 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 49 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             foreach (var idx in new Range(0L, (targetLength - 1L)))
             {
-#line 47 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 50 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 MicrosoftQuantumPrimitiveH.Apply(target[idx]);
             }
 
-#line 50 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 53 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var power = 1L;
-#line 51 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 54 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             foreach (var idx in new Range(0L, (targetLength - 1L)))
             {
-#line 52 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 55 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 ConstructU.Controlled.Apply((new QArray<Qubit>()
                 {target[((targetLength - 1L) - idx)]}, (x, N, power, eigenvector)));
-#line 53 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 56 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 power = (power * 2L);
             }
 
-#line 56 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 59 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             InverseFT.Apply(target);
             // (Adjoint QFT)(BigEndian(target));
             ;
@@ -247,10 +247,8 @@ namespace myShorLib
         public override Func<(Int64,Int64,Int64,QArray<Qubit>), QVoid> Body => (__in) =>
         {
             var (x,modulus,power,target) = __in;
-#line 64 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 71 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             MicrosoftQuantumCanonModularMultiplyByConstantLE.Apply((PowerMod.Apply((x, power, modulus)), modulus, new Microsoft.Quantum.Canon.LittleEndian(target)));
-            // TODO: should be implement
-            ;
 #line hidden
             return QVoid.Instance;
         }
@@ -259,7 +257,6 @@ namespace myShorLib
         public override Func<(Int64,Int64,Int64,QArray<Qubit>), QVoid> AdjointBody => (__in) =>
         {
             var (x,modulus,power,target) = __in;
-            // TODO: should be implement
             MicrosoftQuantumCanonModularMultiplyByConstantLE.Adjoint.Apply((PowerMod.Apply((x, power, modulus)), modulus, new Microsoft.Quantum.Canon.LittleEndian(target)));
 #line hidden
             return QVoid.Instance;
@@ -270,8 +267,6 @@ namespace myShorLib
         {
             var (controlQubits,(x,modulus,power,target)) = __in;
             MicrosoftQuantumCanonModularMultiplyByConstantLE.Controlled.Apply((controlQubits, (PowerMod.Apply((x, power, modulus)), modulus, new Microsoft.Quantum.Canon.LittleEndian(target))));
-            // TODO: should be implement
-            ;
 #line hidden
             return QVoid.Instance;
         }
@@ -280,7 +275,6 @@ namespace myShorLib
         public override Func<(QArray<Qubit>,(Int64,Int64,Int64,QArray<Qubit>)), QVoid> ControlledAdjointBody => (__in) =>
         {
             var (controlQubits,(x,modulus,power,target)) = __in;
-            // TODO: should be implement
             MicrosoftQuantumCanonModularMultiplyByConstantLE.Adjoint.Controlled.Apply((controlQubits, (PowerMod.Apply((x, power, modulus)), modulus, new Microsoft.Quantum.Canon.LittleEndian(target))));
 #line hidden
             return QVoid.Instance;
@@ -330,27 +324,27 @@ namespace myShorLib
         public override Func<QArray<Qubit>, QVoid> Body => (__in) =>
         {
             var qs = __in;
-#line 80 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 87 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var qLength = qs.Count;
-#line 81 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 88 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             foreach (var i in new Range(0L, (qLength - 1L)))
             {
-#line 82 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 89 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 foreach (var j in new Range(0L, (i - 1L)))
                 {
-#line 83 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 90 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                     MicrosoftQuantumPrimitiveR1Frac.Controlled.Apply((new QArray<Qubit>()
                     {qs[j]}, (1L, (i - j), qs[i])));
                 }
 
-#line 85 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 92 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 MicrosoftQuantumPrimitiveH.Apply(qs[i]);
             }
 
-#line 88 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 95 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             foreach (var i in new Range(0L, ((qLength / 2L) - 1L)))
             {
-#line 89 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 96 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 MicrosoftQuantumPrimitiveSWAP.Apply((qs[i], qs[((qLength - 1L) - i)]));
             }
 
@@ -362,7 +356,7 @@ namespace myShorLib
         public override Func<QArray<Qubit>, QVoid> AdjointBody => (__in) =>
         {
             var qs = __in;
-#line 80 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 87 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var qLength = qs.Count;
             foreach (var i in new Range((0L - (((((qLength / 2L) - 1L) - 0L) / 1L) * -(1L))), -(1L), 0L))
             {
@@ -474,32 +468,32 @@ namespace myShorLib
         public override Func<(Int64,Int64,Int64), Int64> Body => (__in) =>
         {
             var (x,power,modulus) = __in;
-#line 100 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 110 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var times = x;
-#line 101 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 111 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var result = 1L;
-#line 102 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 112 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var powerBits = power;
             // Fast Power
-#line 105 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 115 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var powerLength = MicrosoftQuantumCanonBitSize.Apply(power);
-#line 106 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 116 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             foreach (var i in new Range(0L, (powerLength - 1L)))
             {
-#line 107 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 117 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 if (((powerBits % 2L) == 1L))
                 {
-#line 108 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 118 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                     result = ((result * times) % modulus);
                 }
 
-#line 110 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 120 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 powerBits = (powerBits / 2L);
-#line 111 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 121 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
                 times = ((times * times) % modulus);
             }
 
-#line 113 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 123 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             return (result % modulus);
         }
 
@@ -533,9 +527,9 @@ namespace myShorLib
 
         public override Func<QVoid, Int64> Body => (__in) =>
         {
-#line 119 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 129 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             var a = PhaseEstimation.Apply((3L, 5L, 7L));
-#line 120 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
+#line 130 "C:\\AResource\\QuantumComputing\\myShor\\myShorLib\\Operation.qs"
             return a;
         }
 
