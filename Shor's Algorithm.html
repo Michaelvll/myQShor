@@ -11791,6 +11791,17 @@ $\newcommand{\ket}[1]{\left|{#1}\right\rangle}
 <li><strong>Cross-language interoperability</strong>: one can call our Q# subroutine in languages other than C#, such as Python</li>
 <li><strong>Parallel computation</strong>: we introduced parallel computation in the implementation of Shor's algorithm</li>
 </ul>
+<h2 id="Requirement">Requirement<a class="anchor-link" href="#Requirement">&#182;</a></h2><ul>
+<li>conda</li>
+<li>.Net core sdk &gt;= 2.0</li>
+</ul>
+<h2 id="How-to-run">How to run<a class="anchor-link" href="#How-to-run">&#182;</a></h2><ol>
+<li>To install the dependencies, run command <code>conda env create -f ./environment.yml</code></li>
+<li>Activate the python environment, run command <code>activate qsharp-samples</code></li>
+<li>Run command <code>cd ./myShorLib/; dotnet build</code>, which will build the dynamic library of the Q#</li>
+<li>Run command <code>cd ../Classical</code> to go into the classical part of the codes.</li>
+<li>You can now run <code>python shor.py</code> to run the Shor's Algorithm and the program will wait for your input of the integer to be factorized. Or you can run <code>python test.py</code> to run the Shor's Algorithm to factorize integers from 1 to 100, and output the result to ./test.out</li>
+</ol>
 <h2 id="Directory-Structure">Directory Structure<a class="anchor-link" href="#Directory-Structure">&#182;</a></h2><h3 id="Classical-Part">Classical Part<a class="anchor-link" href="#Classical-Part">&#182;</a></h3><p><a href="./gcd.py">gcd.py</a>: This code calculate the greatest common divider of two given number a and b</p>
 
 </div>
@@ -12308,11 +12319,11 @@ $\newcommand{\ket}[1]{\left|{#1}\right\rangle}
 <h2 id="Quantum-Phase-Estimation">Quantum Phase Estimation<a class="anchor-link" href="#Quantum-Phase-Estimation">&#182;</a></h2><ol>
 <li>Input two register. The first one contains $t$ qubits in state $\left|{0}\right\rangle$,where $t$ is the precision of the estimation. The second one is eigenvector of U (actually it can be any vector that is in the space spanned by the eignevectors of U, and in the code it is an initialized vector with $\left|{1}\right\rangle$ at the first and $\left|{0}\right\rangle$ at other position). Apply the circuit shown in Figure 1 to get each bit of $\phi$.</li>
 <li>The circuit begins by applying a Hadamard transform to the first register, followed by application of controlled-U operations on the second register, with U raised to successive powers of two. 
-<img src="./others/pe2.png" alt="Figure 1: The first stage of the phase estimation procedure">
+<img src="./others/pe2.png" alt="">
 <em>Figure 1: The first stage of the phase estimation procedure</em></li>
 <li>Apply inverse Fourier transform circuit on first register while doing nothing on second one. The Fourier transform circuit is shown in Figure 2 and the normalization factors and swap gates which should be applied at the circuit are not shown. 
 The circuit begins by applying a Hadamard transform , followed by application of controlled-$R_i$ operations where operation $R_k$'s matrix representation is $\begin{pmatrix}1 &amp; 0 \\0 &amp; e^{2 \pi i / 2^k}\end{pmatrix}$. Finally it ends with a swap gate to swap $\left|{\phi_i}\right\rangle$ and $\left|{\phi_{n-i+1}}\right\rangle$.
- <img src="./others/qft.png" alt="Figure 2: Quantum Fourier Transform circuit">
+ <img src="./others/qft.png" alt="">
 <em>Figure 2: Quantum Fourier Transform circuit</em></li>
 <li>The final state of first register is $\left|{\theta}\right\rangle$ where $\theta$ is a t bit estimation of a element in $\{\frac{s}{r} | $r is the order$, s=0 \dots r-1\}$. Measure the first register and get a decimal $\theta$.</li>
 </ol>
@@ -12409,7 +12420,7 @@ We introduced parallel computation in this process, that is, performing the orde
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For example, when we calls the code to factorize 21. The code will calculate several $x$ at the same time, and get the result in a short time. The process is shown in the figure below.
-<img src="./others/parallel.png" alt="parallel"></p>
+<img src="./others/parallel.png" alt=""></p>
 
 </div>
 </div>
