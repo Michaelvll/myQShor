@@ -11775,7 +11775,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Course-Project---Shor's-Algorithm">Course Project - Shor's Algorithm<a class="anchor-link" href="#Course-Project---Shor's-Algorithm">&#182;</a></h1><p>CS251 Quantum Information Science, 2018 @ ACM Honors Class, SJTU
+<h1 id="Course-Project---Shor's-Algorithm">Course Project - Shor's Algorithm<a class="anchor-link" href="#Course-Project---Shor's-Algorithm">&#182;</a></h1><p>CS251 Quantum Information Science, 2018 @ ACM Honors Class, SJTU</p>
+<p><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 $\newcommand{\ket}[1]{\left|{#1}\right\rangle}
 \newcommand{\bra}[1]{\left\langle{#1}\right|}$</p>
 <h2 id="Lecturer">Lecturer<a class="anchor-link" href="#Lecturer">&#182;</a></h2><p>Prof. <strong>Runyao Duan</strong></p>
@@ -12305,21 +12306,15 @@ $\newcommand{\ket}[1]{\left|{#1}\right\rangle}
 </li>
 </ol>
 <h2 id="Quantum-Phase-Estimation">Quantum Phase Estimation<a class="anchor-link" href="#Quantum-Phase-Estimation">&#182;</a></h2><ol>
-<li>Input two register. The first one contains $t$ qubits in state $\ket{0}$,where $t$ is the precision of the estimation. The second one is eigenvector of U (actually it can be any vector that is in the space spanned by the eignevectors of U, and in the code it is an initialized vector with $\ket{1}$ at the first and $\ket{0}$ at other position). Apply the circuit shown in Figure 1 to get each bit of $\phi$.</li>
+<li>Input two register. The first one contains $t$ qubits in state $\left|{0}\right\rangle$,where $t$ is the precision of the estimation. The second one is eigenvector of U (actually it can be any vector that is in the space spanned by the eignevectors of U, and in the code it is an initialized vector with $\left|{1}\right\rangle$ at the first and $\left|{0}\right\rangle$ at other position). Apply the circuit shown in Figure 1 to get each bit of $\phi$.</li>
 <li>The circuit begins by applying a Hadamard transform to the first register, followed by application of controlled-U operations on the second register, with U raised to successive powers of two. 
 <img src="./others/pe2.png" alt="Figure 1: The first stage of the phase estimation procedure">
 <em>Figure 1: The first stage of the phase estimation procedure</em></li>
 <li>Apply inverse Fourier transform circuit on first register while doing nothing on second one. The Fourier transform circuit is shown in Figure 2 and the normalization factors and swap gates which should be applied at the circuit are not shown. 
-The circuit begins by applying a Hadamard transform , followed by application of controlled-$R_i$ operations where operation $R_k$'s matrix representation is $\left( 
-<pre><code> \begin{array}{cc}
-     1 &amp; 0 \\
-     0 &amp; e^{2 \pi i / 2^k}
- \end{array}
-</code></pre>
- \right)$. Finally it ends with a swap gate to swap $\ket{\phi<em>i}$ and $\ket{\phi</em>{n-i+1}}$.
+The circuit begins by applying a Hadamard transform , followed by application of controlled-$R_i$ operations where operation $R_k$'s matrix representation is $\begin{pmatrix}1 &amp; 0 \\0 &amp; e^{2 \pi i / 2^k}\end{pmatrix}$. Finally it ends with a swap gate to swap $\left|{\phi_i}\right\rangle$ and $\left|{\phi_{n-i+1}}\right\rangle$.
  <img src="./others/qft.png" alt="Figure 2: Quantum Fourier Transform circuit">
 <em>Figure 2: Quantum Fourier Transform circuit</em></li>
-<li>The final state of first register is $\ket{\theta}$ where $\theta$ is a t bit estimation of a element in $\{\frac{s}{r} | $r is the order$, s=0 \dots r-1\}$. Measure the first register and get a decimal $\theta$.</li>
+<li>The final state of first register is $\left|{\theta}\right\rangle$ where $\theta$ is a t bit estimation of a element in $\{\frac{s}{r} | $r is the order$, s=0 \dots r-1\}$. Measure the first register and get a decimal $\theta$.</li>
 </ol>
 <h2 id="Cross-language-Interoperability">Cross-language Interoperability<a class="anchor-link" href="#Cross-language-Interoperability">&#182;</a></h2><p>To encapsulate the quantum subroutine implemented in Q#, we separate the Q# operations as a standalone .NET standard library project. And we compiled this project to generate the library assemblies. Then one can use operations in that library in languages other than C# by adding a reference to the assemblies file. For instance, to use our Q# library in Python, one could use the Python.NET package to load the assemblies, and one should also add references to the assemblies from the Q# development kit released by Microsoft as dependencies.</p>
 <p>The following example shows how to load our assemblies in Python. One should first have Python.NET package installed in Python environment in order to use the clr module. One can use the command <code>pip install pythonnet</code> to install Python.NET package. It is also needed to add the path to the assemblies file in the system path such that the <code>clr</code> module could find the assemblies. Another requirement is Python library <code>qsharp</code>, which provides a QuantumSimulator class which wraps the Microsoft.Quantum.Simulation.Simulators.QuantumSimulator .NET class provided with the Quantum Development Kit. This wrapper provides a few useful convienence features that we will use later.</p>
