@@ -13,9 +13,9 @@ Prof. **Runyao Duan**
 
 ## Group Member
 
-- **Zetian Jiang** (516030910577)
-- **Zhanghao Wu** (516030910593)
-- **Zhou Fan** (516030910574)
+- **Zetian Jiang**
+- **Zhanghao Wu**
+- **Zhou Fan**
 
 
 ## Abstract
